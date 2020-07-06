@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  pgsql2:
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    container_name: "database_pg_gobarber"
+    restart: always
+    volumes:
+      - pg-data-gobarber:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+
+  adminer:
+    image: adminer
+    container_name: "adminer_gobarber"
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  pg-data-gobarber:
