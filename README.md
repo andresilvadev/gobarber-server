@@ -34,6 +34,10 @@ $ npx sequelize db:migrate
 
 - Acesse http://localhost:3000 para acessar o projeto web
 
+```bash
+$ npm run start
+```
+
 ## Dependencias utilizadas
 
 - Sequelize ORM
