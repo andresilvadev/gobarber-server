@@ -22,7 +22,9 @@ class SessionController {
       return res.redirect("/");
     }
 
-    return res.redirect("/app/dashword");
+    req.session.user = user;
+
+    return res.redirect("/app/dashboard");
   }
 }
 
