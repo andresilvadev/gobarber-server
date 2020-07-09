@@ -14,10 +14,12 @@ class SessionController {
 
     if (!user) {
       console.log("Usuário não encontrado");
+      req.flash("error", "Usuário não encontrado");
       return res.redirect("/");
     }
 
     if (!(await user.checkPassword(password))) {
+      req.flash("error", "Senha incorreta");
       console.log("Senha incorreta");
       return res.redirect("/");
     }
