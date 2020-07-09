@@ -11,6 +11,7 @@ const SessionController = require("./app/controllers/SessionController");
 const DashboardController = require("./app/controllers/DashboardController");
 const FileController = require("./app/controllers/FileController");
 const AppointmentController = require("./app/controllers/AppointmentController");
+const AvaliableController = require("./app/controllers/AvaliableController");
 
 routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash("success");
@@ -33,5 +34,7 @@ routes.post("/signup", upload.single("avatar"), UserController.store);
 routes.get("/app/dashboard", DashboardController.index);
 
 routes.get("/app/appointments/new/:provider", AppointmentController.create);
+
+routes.get("/app/avaliable/:provider", AvaliableController.index);
 
 module.exports = routes;
