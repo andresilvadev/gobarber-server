@@ -34,6 +34,7 @@ routes.post("/signup", upload.single("avatar"), UserController.store);
 routes.get("/app/dashboard", DashboardController.index);
 
 routes.get("/app/appointments/new/:provider", AppointmentController.create);
+routes.get("/app/appointments/new/:provider", AppointmentController.store);
 
 routes.get("/app/avaliable/:provider", AvaliableController.index);
 

@@ -48,7 +48,7 @@ class AvaliableController {
         value: value.format(),
         avaliable:
           value.isAfter(moment()) &&
-          !appointments.find((a) => moment(a.date).format("HH:mm") == trim),
+          !appointments.find((a) => moment(a.date).format("HH:mm") == time),
       };
     });
 
