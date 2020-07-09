@@ -13,9 +13,12 @@ const SessionController = require("./app/controllers/SessionController");
 routes.use("/app", authMiddleware);
 
 routes.get("/", SessionController.create);
+routes.get("/app/logout", SessionController.destroy);
+
 routes.post("/signin", SessionController.store);
 routes.get("/signup", UserController.create);
 routes.post("/signup", upload.single("avatar"), UserController.store);
+
 routes.get("/app/dashboard", (req, res) => {
   console.log(req.session.user);
   res.render("dashboard");
