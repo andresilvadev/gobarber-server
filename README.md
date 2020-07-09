@@ -24,6 +24,12 @@ $ docker-compose up -d
 * Informe a senha **root**
 * Informe o banco **gonodemodulo2**
 
+## Criando uma migração
+
+```bash
+$ npx sequelize migration:create --name=create-appointments
+```
+
 ## Rodar as migrações do projeto
 
 - Acesse a pasta do projeto nestjs e rode o comando abaixo
