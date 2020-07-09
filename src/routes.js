@@ -12,6 +12,7 @@ const DashboardController = require("./app/controllers/DashboardController");
 const FileController = require("./app/controllers/FileController");
 const AppointmentController = require("./app/controllers/AppointmentController");
 const AvaliableController = require("./app/controllers/AvaliableController");
+const ScheduleController = require("./app/controllers/ScheduleController");
 
 routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash("success");
@@ -21,10 +22,10 @@ routes.use((req, res, next) => {
 
 routes.get("/files/:file", FileController.show);
 
+routes.get("/", guestMiddleware, SessionController.create);
+
 // Enable on all routes that start with /app
 routes.use("/app", authMiddleware);
-
-routes.get("/", guestMiddleware, SessionController.create);
 routes.get("/app/logout", SessionController.destroy);
 
 routes.post("/signin", SessionController.store);
@@ -37,5 +38,7 @@ routes.get("/app/appointments/new/:provider", AppointmentController.create);
 routes.get("/app/appointments/new/:provider", AppointmentController.store);
 
 routes.get("/app/avaliable/:provider", AvaliableController.index);
+
+routes.get("/app/schedule", ScheduleController.index);
 
 module.exports = routes;
