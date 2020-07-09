@@ -7,6 +7,11 @@ class UserController {
   }
 
   async store(req, res) {
+    if (!req.file) {
+      req.flash("error", "Necessário adicionar uma imagem");
+      return res.redirect("/signup");
+    }
+
     const { filename } = req.file;
 
     await User.create({
