@@ -22,7 +22,7 @@
   "devDependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.1",
     "flatpickr": "^4.6.3",
     "moment": "^2.27.0",
